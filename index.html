@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pizza order</title>
+    <script src="./CSS/style.js"></script>
+    <script src="./JS/index.js" defer></script>
+</head>
+<body class="font-alata">
+    <div class="bg-bg-body h-contain relative">
+        <div class="container relative text-center pt-12">
+            <form id="form" class="bg-gray-500 bg-bg-form mx-auto relative rounded-xl max-h-max w-1/2">
+               <h1 class="text-2xl p-4 text-yellow-100">Pizza order</h1>
+               <div class="">
+                   <div id="input" class="grid gap-4 pb-8">
+                        <label id="user_name" class="mx-auto w-11/12">
+                            <input id="name_input" class="w-11/12 pl-8 h-8 " type="text" placeholder="User name" required>
+                        </label>
+                        <label id="phone_number" class="mx-auto w-11/12">
+                            <input id="phone_input" class="w-11/12 pl-8 h-8" type="tel" placeholder="Phone number" required>
+                        </label>
+                        <label class="mx-auto w-11/12">
+                            <input id="address_input" class="w-11/12 h-8 pl-8" type="text" placeholder="address" required>
+                        </label>
+                   </div> 
+                    
+
+                    <label class="text-yellow-100"> Dough thickness:
+                        <select name="" id="select" class="w-6/12 text-black">
+                            <option id="thin"  value="thin">Thin</option>
+                            <option id="medium" value="medium">Medium</option>
+                            <option id="thick" value="thick">Thick</option>
+
+                        </select>
+                    </label>
+                    
+                    <div id="radio_form" class="w-6/12 mx-auto pt-4" > 
+                        <h2 class="text-yellow-100 text-xl pb-4"> Size: </h2>  
+                        <label class="pl-4">
+                            <input id="input_radio" class="pl-12" value="25" name="size" type="radio" required>
+                            <span class="text-xl text-white">25cm</span> 
+                        </label>
+                        <label class="pl-8">
+                            <input id="input_radio2" class="" name="size" value="30" type="radio" required>
+                            <span class="text-xl text-white">30cm</span> 
+                        </label>
+                        <label class="pl-8">
+                            <input id="input_radio3" class="" name="size" value="35" type="radio" required>
+                            <span class="text-xl text-white">35cm</span>
+                        </label>
+                    </div>
+
+                    <div class="pt-4 mx-auto">
+                        <h2 class="text-yellow-100 text-xl pb-4">On pizza:</h2> 
+                        <div id="input_checkbox" class="grid grid-cols-2 text-start ml-28 gap-4 text-white ">
+                            <label > 
+                                <input  type="checkbox" value="Tamoto">
+                                Tamoto
+                            </label>
+                            <label > 
+                                <input type="checkbox" value="turkey meat" >
+                                Turkey meat
+                            </label>
+                            <label > 
+                                <input type="checkbox" value="Olive">
+                                Olive
+                            </label>
+                            <label > 
+                                <input type="checkbox" value="Pickled cucumber">
+                                Pickled cucumber
+                            </label>
+                            <label > 
+                                <input type="checkbox" value="Mushroom">
+                                Mushroom
+                            </label>
+                            <label > 
+                                <input type="checkbox" value="Horse meat">
+                                Horse meat
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pt-8">
+                        <h2 class="text-yellow-100 text-xl pb-4 ">Add:</h2>
+                        <div id="add_input" class="flex justify-around text-white">
+                            <label>
+                                <input type="checkbox" value="Pepper">
+                                Pepper
+                            </label>
+                            <label>
+                                <input type="checkbox" value="Sausages">
+                                Sausages
+                            </label>
+                        </div>
+                    </div>
+               </div>
+
+               <div class="p-12">
+                    <button id="btn_save" class= "text-yellow-100 px-8 py-2 text-xl active:bg-white rounded-md active:text-black border-2" >
+                        Save
+                    </button>
+               </div>
+               
+            </form>
+
+
+            <div class="modal w-[620px] h-24 bg-lime-800 rounded absolute -translate-y-[1200px] top-0 mx-72 transition duration-300 delay-75">
+                <div class="modal_content">
+                    <button class="btn_close rounded-sm bg-white w-8 h-8 absolute right-4 "> X </button>
+                    <p class="text-white pt-8">Buyurtma qabul qilindi!</p>
+                </div>
+            </div>
+            
+            <ul id="result_menu" class="text-white">
+
+            </ul>
+
+
+        </div>
+    </div>
+</body>
+</html>
