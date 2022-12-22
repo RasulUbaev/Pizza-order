@@ -8,7 +8,6 @@ let __thin =document.getElementById(`thin`);
 let __btn_save = document.getElementById(`btn_save`);
 let __modal = document.querySelector (`.modal`);
 let __btn_close = document.querySelector (`.btn_close`);
-let __result_name = document.querySelector (`.result_name`);
 let __result_menu = document.querySelector (`#result_menu`);
 let __radio_input = document.querySelector (`#radio_form`);
 let __input_radio = document.querySelector (`#input_radio`);
@@ -16,6 +15,7 @@ let __input_radio2 = document.querySelector (`#input_radio2`);
 let __input_radio3 = document.querySelector (`#input_radio3`);
 let __input_checkbox = document.querySelector(`#input_checkbox`);
 let __add_input = document.querySelector (`#add_input`);
+let __result_name = document.querySelector (`#result_name`);
 
 console.log();
 
@@ -31,8 +31,6 @@ function handleSubmit(e) {
         address: __userAddress.value,
     }
     
-
-
     __userName.value= ``,
     __userPhone.value = ``,
     __userAddress.value = ``,
@@ -51,34 +49,35 @@ function renderUsers (){
  
         let li = document.createElement(`li`);
         li.className = `list_item`;
-        // li.style= `width: 400px; height: 400px; border: 1px solid white;`
-        __result_menu.append(li);       
- 
+        li.style= `background-color: green; width: 30%; margin: 0 auto;`
+        __result_menu.append(li);     
+        
+         
          let UName =document.createElement (`p`)
          UName.textContent=(usersInfor[i]).name;
-         li.append(UName)
+         li.appendChild(UName)
  
          
          let UPhone =document.createElement (`p`)
          UPhone.textContent=(usersInfor[i]).phone;
-         li.append(UPhone)
+         li.appendChild(UPhone)
  
          let UAddress =document.createElement (`p`)
          UAddress.textContent=(usersInfor[i]).address;
-         li.append(UAddress)
+         li.appendChild(UAddress)
  
  
         let doughThickness = document.createElement(`p`) 
         doughThickness.textContent = (usersInfor[i]).doughThickness;
-        li.append(doughThickness)
+        li.appendChild(doughThickness)
 
         let size = document.createElement(`p`) 
          size.textContent = (usersInfor[i]). size;
-        li.append(size)
+        li.appendChild(size)
 
         let pizzArr = document.createElement(`p`) 
-         pizzArr.textContent = (usersInfor[i]).pizzArr;
-        li.append(pizzArr)
+        pizzArr.textContent = (usersInfor[i]).pizzArr;
+        li.appendChild(pizzArr)
      }
  }
 
@@ -105,7 +104,6 @@ __radio_input.addEventListener(`change`, function (e){
 let pizzArr= [`On pizza:`]
 
 usersInfor.push(pizzArr);
-
 __input_checkbox.addEventListener(`change`, function (e){
     if(e.target.checked){  
     pizzArr.push(e.target.value);
@@ -115,8 +113,7 @@ __input_checkbox.addEventListener(`change`, function (e){
                 pizzArr.splice(index, index + 1);
             }
         })
-    }
-        
+    }   
 })
 
 let addArr= [`Add:`]
@@ -133,15 +130,10 @@ __add_input.addEventListener(`change`, function (e){
             }
         })
     }
-        
 })
 
-
-
-
 __btn_save.addEventListener(`click`, function () {
-    __modal.classList.toggle(`-translate-y-[1200px]`);
-
+        __modal.classList.toggle(`-translate-y-[1200px]`);
 })
 
 __btn_close.addEventListener(`click`, function () {
